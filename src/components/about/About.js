@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import CV from './../assets/Kishore-Frontend.pdf';
-import Profile from '../assets/profile.jpg';
+// import CV from './../assets/Kishore-Frontend.pdf';
+// import Profile from '../assets/profile.jpg';
 import * as S from './style';
 import { Tabs, Tab } from '@mui/material';
 
