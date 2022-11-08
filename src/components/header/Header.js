@@ -1,9 +1,9 @@
-import { Button } from "@mui/material";
+import { Button, Skeleton } from "@mui/material";
 import * as S from "./style";
 
 const navButtons = ["ABOUT", "SKILLS", "CONTACTS"];
 
-const Header = ({ changePage }) => {
+const Header = ({ changePage, loading, person, detailsError }) => {
   const renderNavButton = navButtons.map((btnName, index) => (
     <Button
       size="large"
@@ -14,11 +14,25 @@ const Header = ({ changePage }) => {
       {btnName}
     </Button>
   ));
+
+  const renderTitle = () => {
+    if (detailsError) {
+      return <h1>Something went wrong</h1>;
+    }
+    return (
+      <h1 style={{ cursor: "pointer" }} onClick={() => changePage("INTRO")}>
+        {loading ? (
+          <Skeleton animation="wave" width={300} />
+        ) : (
+          person.first_name
+        )}
+      </h1>
+    );
+  };
+
   return (
     <S.HeadWrapper>
-      <h1 style={{ cursor: "pointer" }} onClick={() => changePage("INTRO")}>
-        Venkata Kishore
-      </h1>
+      {renderTitle()}
       <S.NavWrapper>{renderNavButton}</S.NavWrapper>
     </S.HeadWrapper>
   );
