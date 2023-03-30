@@ -1,60 +1,40 @@
-import { useState, useEffect } from "react";
-import { Container } from "@mui/material";
-import Header from "./header/Header";
-import Footer from "./footer/Footer";
-import About from "./about/About";
 import Intro from "./intro/Intro";
+import About from "./about/About";
+import { Navigater } from "./navigation/Navigater";
+import { useState } from "react";
+
+const menuNames = {
+  home: 'home',
+  about: 'about',
+  skill: 'skill',
+  contact: 'contact'
+}
 
 const Home = () => {
-  const [page, setPage] = useState("INTRO");
-  const [person, setPerson] = useState({});
-  const [loading, setLoading] = useState(true);
-  const [detailsError, setDetailsError] = useState(false);
 
-  useEffect(() => {
-    fetch("https://gvkishorereddy.herokuapp.com")
-      .then((res) => res.json())
-      .then((data) => {
-        setPerson(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setLoading(false);
-        setDetailsError(true);
-      });
-  }, []);
+  const [active, setActive] = useState({ name: "home" });
 
-  const changePage = (selectedPage) => {
-    if (page !== selectedPage) {
-      setPage(selectedPage);
+  const handleMenu = (menu) => {
+    setActive(menu)
+  }
+
+  const renderScreen = () => {
+    switch(active.name) {
+
+      case menuNames.home:
+        return <Intro />
+      case menuNames.about:
+        return <About />
+      default: 
+        return <Intro />
     }
-  };
-
-  const renderPage = () => {
-    switch (page) {
-      case "INTRO":
-        return <Intro loading={loading} person={person} error={detailsError} />;
-      case "ABOUT":
-        return <About />;
-      case "SKILLS":
-        return <div>hello</div>;
-      case "CONTACTS":
-        return <div>name</div>;
-      default:
-        return <Intro />;
-    }
-  };
+  }
+  
   return (
-    <Container>
-      <Header
-        changePage={changePage}
-        loading={loading}
-        person={person}
-        error={detailsError}
-      />
-      {renderPage()}
-      <Footer loading={loading} person={person} error={detailsError} />
-    </Container>
+    <div>
+      {renderScreen()}
+      <Navigater handleMenu={handleMenu} />
+    </div>
   );
 };
 

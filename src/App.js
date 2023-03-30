@@ -1,4 +1,5 @@
 import Home from "./components/Home";
+import "@innovaccer/design-system/css/dist/index.css";
 
 function App() {
   return (
