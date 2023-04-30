@@ -7,9 +7,9 @@ import PageWrapper from "../pageWrapper/PageWrapper";
 const Intro = () => {
   return (
     <PageWrapper>
-      <div className="p-10">
+      <S.ImageMobileWrapper className="p-8">
         <S.ProfileImage src={Profile} alt="profile" />
-      </div>
+      </S.ImageMobileWrapper>
       <header className="p-10">
         <S.Greating>Hi, &#128400; I am</S.Greating>
         <Heading size="xl" className="font-weight-bold">

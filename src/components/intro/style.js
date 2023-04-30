@@ -10,6 +10,12 @@ export const ProfileImage = styled.img`
   max-width: 400px;
   max-height: 400px;
   border-radius: 10%;
+
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    max-width: 200px;
+    max-height: 200px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -24,4 +30,12 @@ export const StyledSubHeading = styled(Heading)`
 
 export const Greating = styled.p`
   text-align: center;
+`;
+
+export const ImageMobileWrapper = styled.figure`
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+  }
 `;

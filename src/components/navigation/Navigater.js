@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as S from './style';
+import { useNavigate } from "react-router-dom";
 
 const data = [
   {
@@ -13,7 +14,7 @@ const data = [
     icon: "info"
   },
   {
-    name: "skill",
+    name: "work",
     label: "Work",
     icon: "work"
   },
@@ -24,13 +25,21 @@ const data = [
   }
 ]
 
-export const Navigater = ({ handleMenu }) => {
+export const Navigater = () => {
   
-  const [menu, setActiveMenu] = useState({ name: "home" });
+  const [menu, setActiveMenu] = useState(null);
+
+  useEffect(() => {
+    const sessionMenu = JSON.parse(sessionStorage.getItem("menu"))
+    setActiveMenu(sessionMenu ? sessionMenu : { name: "home" });
+  }, [])
+
+  const navigate = useNavigate();
 
   const onClickHandler = (menu) => {
     setActiveMenu(menu);
-    handleMenu(menu)
+    navigate('/' + menu.name)
+    sessionStorage.setItem("menu", JSON.stringify(menu))
   };
 
   return (

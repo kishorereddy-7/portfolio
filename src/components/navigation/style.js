@@ -9,6 +9,7 @@ export const NavigationWrapper = styled.div`
   background-color: white;
   border-radius: 15px;
   box-shadow: 5px 5px 5px black;
+  z-index: 1;
 `;
 
 export const NavigationMenu = styled(HorizontalNav)`
