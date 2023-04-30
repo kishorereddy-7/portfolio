@@ -1,38 +1,88 @@
-import { useState } from 'react';
-// import CV from './../assets/Kishore-Frontend.pdf';
-// import Profile from '../assets/profile.jpg';
-import * as S from './style';
-import { Tabs, Tab } from '@mui/material';
+import PageWrapper from "../pageWrapper/PageWrapper";
+import { Heading, Card, CardHeader, CardBody, CardSubdued } from "@innovaccer/design-system";
+import { educationDetails, workDetails } from "../../constant";
+import * as S from "./style";
 
+const personalDetailsHeaders = {
+  work: "Work Experience",
+  education: "Education Background",
+};
+
+const symbols = {
+  qualification: <span className="mr-4">&#127891;</span>,
+  work: <span className="mr-4">&#128421;</span>,
+  location: <span className="mr-4">&#128205;</span>,
+  rightArrow: <span className="mr-4">&#8594;</span>,
+  building: <span className="mr-4">&#127970;</span>,
+};
 
 const About = () => {
-    const [currentTab, setCurrentTab] = useState(0)
 
-    const handleChange = (e, k) => {
-        console.log("iam .. ", e, k)
-        setCurrentTab(k)
+  const getDetails = (header) => {
+    const detailArrays = {
+      "Work Experience": workDetails,
+      "Education Background": educationDetails
     }
+    return detailArrays[header].map((item, index) => {
+      return (
+        <S.StyledCard className="m-6" key={index}>
+          <CardHeader className="pb-2">
+            <p style={{ color: "#65c868" }} className="m-0">
+              {personalDetailsHeaders.education === header
+                ? symbols.qualification
+                : symbols.work}
+              {personalDetailsHeaders.education === header
+                ? item.qualification
+                : item.designation}
+            </p>
+            <S.SubtitledP className="mt-4">
+              {symbols.building}
+              {personalDetailsHeaders.education === header
+                ? item.institute
+                : item.company}
+            </S.SubtitledP>
+          </CardHeader>
+          <CardBody>
+            <p className="m-0 pb-2">
+              {symbols.location}
+              {item.location}
+            </p>
+          </CardBody>
+          <CardSubdued border="top" className="p-2">
+            <S.DateWrapper>
+              <i>
+                {item.from} {symbols.rightArrow}
+                {item.to}
+              </i>
+            </S.DateWrapper>
+          </CardSubdued>
+        </S.StyledCard>
+      );
+    });
+  };
 
+  const getAllPersonalDetails = (header) => {
     return (
-        <div>
-            <div style={{ textAlign: "center" }} >
-                <h1>About Me</h1>
-            </div>
-            <S.StyledCard>
-                <div>
-                  <h3>Name: Venkata Kishore Reddy</h3>
-                  <h3>Location: Noida</h3>
-                </div>
-                <div>
-                    <Tabs value={currentTab} onChange={handleChange} >
-                        <Tab label="one" index={0} >hello 1</Tab>
-                        <Tab label="two" index={1} >hello 2</Tab>
-                    </Tabs>
-                </div>
-            </S.StyledCard>
-        </div>
+      <>
+        <Heading className="font-weight-bold m-6">{header}</Heading>
+        { getDetails(header)}
+      </>
+    );
+  };
 
-    )
-}
+  return (
+    <PageWrapper>
+      <S.AboutHeadWrapper className="pr-10 pt-8">
+        <Heading size="xl" className="font-weight-bold">
+          A Quick Background
+        </Heading>
+      </S.AboutHeadWrapper>
+      <div className="p-6 pb-10">
+        {getAllPersonalDetails(personalDetailsHeaders.work)}
+        {getAllPersonalDetails(personalDetailsHeaders.education)}
+      </div>
+    </PageWrapper>
+  );
+};
 
-export default About
+export default About;
