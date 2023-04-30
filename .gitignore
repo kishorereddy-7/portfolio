@@ -12,7 +12,7 @@
 /build
 
 # contants
-/src/constants
+/src/constants.js
 
 # misc
 .DS_Store
