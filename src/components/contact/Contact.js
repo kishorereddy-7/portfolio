@@ -1,10 +1,9 @@
-import { Heading, Chip } from "@innovaccer/design-system";
+import { Heading } from "@innovaccer/design-system";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import EmailIcon from "@mui/icons-material/Email";
-import Pdf from "react-pdf-js";
 import * as S from './style';
 
 const IconStyle = { fontSize: "xxx-large", margin: "4px 10px", display: "block", cursor: "pointer" };
@@ -39,10 +38,10 @@ const contactsDetails = [
 
 const Contact = () => {
 
-  const onClikContectText = (code) => {
-    // code to copy text to clipboard
-    window.navigator.clipboard.writeText(code)
-  }
+  // const onClikContectText = (code) => {
+  //   // code to copy text to clipboard
+  //   window.navigator.clipboard.writeText(code)
+  // }
 
   const renderContacts = () => {
     return contactsDetails.map((contact, index) => {

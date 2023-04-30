@@ -1,5 +1,5 @@
 import PageWrapper from "../pageWrapper/PageWrapper";
-import { Heading, Card, CardHeader, CardBody, CardSubdued } from "@innovaccer/design-system";
+import { Heading, CardHeader, CardBody, CardSubdued } from "@innovaccer/design-system";
 import { educationDetails, workDetails } from "../../constant";
 import * as S from "./style";
 
