@@ -1,12 +1,13 @@
 import * as S from "./style";
-import Profile from "./../assets/profile.jpg";
+import Profile from "../assets/profile.jpg";
 import { personalDetails } from "../../constant";
 import { Heading } from "@innovaccer/design-system";
 import PageWrapper from "../pageWrapper/PageWrapper";
 
 const Intro = () => {
+
   return (
-    <PageWrapper>
+    <PageWrapper className="page">
       <S.ImageMobileWrapper className="p-8">
         <S.ProfileImage src={Profile} alt="profile" />
       </S.ImageMobileWrapper>
@@ -18,6 +19,7 @@ const Intro = () => {
             {personalDetails.role.toUpperCase()}
           </S.StyledSubHeading>
         </Heading>
+        <S.DescriptionText>{personalDetails.description}</S.DescriptionText>
       </header>
     </PageWrapper>
   );

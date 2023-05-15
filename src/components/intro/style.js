@@ -39,3 +39,7 @@ export const ImageMobileWrapper = styled.figure`
     padding-top: 0px !important;
   }
 `;
+
+export const DescriptionText = styled.p`
+  max-width: 600px;
+`;

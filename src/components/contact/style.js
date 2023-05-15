@@ -11,5 +11,10 @@ export const StyledHeader = styled.header`
 `;
 
 export const StyledCard = styled(Card)`
-  background-color: #65c868;
+  background-color: #b9c9a4;
+`;
+
+export const ResumeWrapper = styled.div`
+  display: flex;
+  justify-content: center;
 `;
