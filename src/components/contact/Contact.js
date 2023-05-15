@@ -1,10 +1,12 @@
-import { Heading } from "@innovaccer/design-system";
+import { Heading, Button } from "@innovaccer/design-system";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import EmailIcon from "@mui/icons-material/Email";
 import * as S from './style';
+import { personalDetails } from "../../constant";
+import resumePDF from '../assets/resume.pdf';
 
 const IconStyle = { fontSize: "xxx-large", margin: "4px 10px", display: "block", cursor: "pointer" };
 
@@ -56,13 +58,21 @@ const Contact = () => {
   }
 
   return (
-    <S.StyledCard className="m-6 p-8 title">
+    <S.StyledCard className="m-6 p-8 title page">
       <>
         <header>
           <Heading size="xl" className="font-weight-bold">
             Looking forward to working with everyone!
           </Heading>
         </header>
+        <p>{personalDetails.contactDescription}</p>
+        <S.ResumeWrapper>
+          <Button>
+            <a href={resumePDF} target="_blank" rel="noopener noreferrer">
+              Resume
+            </a>
+          </Button>
+        </S.ResumeWrapper>
       </>
       <S.ContactWrapper className="d-flex justify-content-center">
         {renderContacts()}

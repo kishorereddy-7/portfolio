@@ -13,11 +13,11 @@ const data = [
     label: "About",
     icon: "info"
   },
-  {
-    name: "work",
-    label: "Work",
-    icon: "work"
-  },
+  // {
+  //   name: "work",
+  //   label: "Work",
+  //   icon: "work"
+  // },
   {
     name: "contact",
     label: "Contacts",
