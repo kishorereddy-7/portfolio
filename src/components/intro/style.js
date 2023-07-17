@@ -43,3 +43,19 @@ export const ImageMobileWrapper = styled.figure`
 export const DescriptionText = styled.p`
   max-width: 600px;
 `;
+
+export const StyledButton = styled.button`
+  padding: 15px 25px;
+  border: 2px black solid;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: #ddd;
+  }
+`;
+
+export const StyleNav = styled.a`
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+`;
