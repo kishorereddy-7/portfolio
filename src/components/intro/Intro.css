@@ -1,0 +1,36 @@
+.intro-img {
+  background-image: url(../assets/space.jpg);
+  background-size: cover;
+  background-position: top;
+  height: 95vh;
+}
+
+.header-start {
+  font-family: "Sacramento", cursive !important;
+}
+
+.header-start::after {
+  content: "*";
+  animation: startBlink 2s ease infinite;
+}
+
+@keyframes startBlink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.blinking-cursor::after {
+  content: "|";
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
