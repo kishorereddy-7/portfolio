@@ -1,11 +1,11 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "Frontend Developer with the professional experience in the software industry. Proficient in both React and Angular frameworks",
-  "main": "index.js",
+  "description": "Frontend Developer with the professional experience in the software industry.",
   "scripts": {
     "test": "test",
-    "serve": "npx parcel index.html"
+    "serve": "npx parcel src/index.html",
+    "build": "parcel build src/index.html"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,9 @@
   },
   "homepage": "https://github.com/kishorereddy-7/portfolio#readme",
   "devDependencies": {
+    "@babel/core": "^7.22.10",
+    "@babel/preset-env": "^7.22.10",
+    "@babel/preset-react": "^7.22.5",
     "parcel": "^2.9.3",
     "postcss": "^8.4.28",
     "process": "^0.11.10",
