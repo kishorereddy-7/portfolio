@@ -11,7 +11,7 @@ const iam = [
 const Intro = () => {
   const { typedSuperPower, selectedSuperPower } = useTypedSuperPower(iam);
   return (
-    <div className="intro-img flex justify-center items-center flex-col m-2 text-white">
+    <div className="intro-img flex justify-center items-center flex-col text-center text-white">
       <h1 className="text-7xl header-start">
         {personalDetails.firstName + " " + personalDetails.lastName}
       </h1>
