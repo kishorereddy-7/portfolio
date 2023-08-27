@@ -29,3 +29,5 @@ yarn-error.log*
 
 # constants
 /src/constants
+# Local Netlify folder
+.netlify

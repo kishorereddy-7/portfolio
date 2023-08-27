@@ -1,12 +1,21 @@
-.intro-img {
-  background-image: url(../assets/space.jpg);
-  background-size: cover;
-  background-position: top;
-  height: 95vh;
-}
-
 .header-start {
   font-family: "Sacramento", cursive !important;
+}
+
+.intro {
+  height: 100vh;
+}
+
+.intro-img {
+  width: 20rem;
+  height: 20rem;
+}
+
+@media screen and (max-width: 700px) {
+  .intro-img {
+    width: 10rem;
+    height: 10rem;
+  }
 }
 
 .header-start::after {
