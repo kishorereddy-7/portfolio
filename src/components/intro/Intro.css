@@ -18,6 +18,13 @@
   }
 }
 
+@media screen and (max-width: 450px) {
+  .intro-img {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
 .header-start::after {
   content: "*";
   animation: startBlink 2s ease infinite;

@@ -55,8 +55,8 @@ const Skills = () => {
             {skill?.icon}
             <h1 className="font-black">{skill?.title}</h1>
             <div className="flex text-green-500">
-              {skill?.rating?.map((star) => (
-                <Star key={star.id} />
+              {skill?.rating?.map((star, index) => (
+                <Star key={index} />
               ))}
             </div>
           </div>
