@@ -3,9 +3,9 @@ import { personalDetails } from "../../constant";
 import useTypedSuperPower from "../customHooks/useTypedSuperPower";
 import "./Intro.css";
 
-const runImageSrc = new URL("../assets/run.jpg", import.meta.url);
-const playImageSrc = new URL("../assets/play.jpg", import.meta.url);
-const winImageSrc = new URL("../assets/win.jpg", import.meta.url);
+const runImageSrc = new URL("../assets/run-r.png", import.meta.url);
+const playImageSrc = new URL("../assets/play-r.png", import.meta.url);
+const winImageSrc = new URL("../assets/win__r.png", import.meta.url);
 
 const iam = [
   "a Frontend Developer",
@@ -39,7 +39,7 @@ const Intro = () => {
   }, [typedSuperPower]);
 
   return (
-    <div className="flex flex-col intro">
+    <div className="flex rounded-xl flex-col intro">
       <div className="flex justify-around my-8">
         <img className="intro-img" src={runImageSrc} alt="run" />
         <img className="intro-img" src={playImageSrc} alt="play" />
